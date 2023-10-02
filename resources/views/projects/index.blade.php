@@ -13,7 +13,7 @@
                                 @if(str_contains($project->image, 'https://'))
                                     <img src="{{$project->image}}" class="" alt="...">
                                 @else
-                                    <img src="/images/{{$project->image}}" class="" alt="...">
+                                    <img src="/storage/images/{{$project->image}}" class="" alt="...">
                                 @endif
                             </div>
                             <div class="">
