@@ -2,8 +2,8 @@
 @extends('layouts.app')
 {{-- Content to display with HTML symantics --}}
 @section('content')
-    <div class="section">
-        <div class="container">
+    <div class="p-4">
+        <div class="container mx-auto">
             @if(str_contains($project->image, 'https://'))
                 <img class="" src="{{$project->image}}">
             @else()
