@@ -12,8 +12,8 @@
         "
 >
     <div>
-        <a href="/">
-            Moped Mixers
+        <a href="{{ url('/') }}">
+            {{ config('app.name', 'Laravel') }}
         </a>
     </div>
 
@@ -47,19 +47,38 @@
                 >Projects</a
                 >
             </li>
+            <!-- Authentication Links -->
+            @guest
+                @if (Route::has('login'))
+                    <li class="">
+                        <a class="md:p-4 py-2 block hover:text-purple-400" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @endif
 
-            <li>
-                <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-                >Blog</a
-                >
-            </li>
-            <li>
-                <a
-                    class="md:p-4 py-2 block hover:text-purple-400 text-purple-500"
-                    href="#"
-                >Sign Up</a
-                >
-            </li>
+                @if (Route::has('register'))
+                    <li class="">
+                        <a class="md:p-4 py-2 block hover:text-purple-400" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="">
+                    <a id="navbarDropdown" class="md:p-4 py-2 block hover:text-purple-400" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
         </ul>
     </div>
 </nav>
