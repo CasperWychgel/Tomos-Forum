@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Project;
 use Illuminate\Database\Seeder;
 
@@ -20,6 +21,10 @@ class DatabaseSeeder extends Seeder
 
         Category::factory()
             ->count(3)
+            ->create();
+
+        Image::factory()
+            ->count(5)
             ->create();
     }
 }

@@ -9,13 +9,9 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $table = 'images';
-    protected $fillable = [
-        'url', 'product_id'
-    ];
+    protected $guarded = [];
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id');
-
     }
 }

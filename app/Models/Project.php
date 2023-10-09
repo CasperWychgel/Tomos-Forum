@@ -11,11 +11,18 @@ class Project extends Model
 
     protected $guarded = [];
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function images(){
+    public function images()
+    {
         return $this->hasMany(Image::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

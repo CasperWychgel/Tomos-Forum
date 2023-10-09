@@ -23,12 +23,10 @@ class ProjectStoreRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
             'name' => ['required','string','max:50','unique:projects'],
             'description' => ['required','string','max:250'],
-            'short_description' => ['required','string','max:250'],
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'images' => ['required','file'],
         ];
     }
 }

@@ -19,8 +19,7 @@ class ProjectFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->sentence(20),
-            'short_description' => fake()->sentence(5),
-            'image' => fake()->imageUrl(1920, 1200, 'animals', true),
+            'user_id' => 1,
         ];
     }
 }
