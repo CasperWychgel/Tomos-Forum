@@ -7,21 +7,19 @@
             <h1>Throw you moped in the mix</h1>
             <div class="grid grid-cols-4 gap-4">
                 @foreach($projects as $project)
-                    <div class="flex flex-col rounded">
-                        <div class="">
-                            <div class="">
-                                @if(str_contains($project->image, 'https://'))
-                                    <img src="{{$project->image}}" class="" alt="...">
-                                @else
-                                    <img src="/storage/images/{{$project->image}}" class="" alt="...">
-                                @endif
-                            </div>
-                            <div class="">
-                                <div class="">
-                                    <h5 class="">{{$project->name}}</h5>
-                                    <p class="">{{$project->description}}</p>
-                                    <a href="{{route('projects.show', $project->id)}}" >View project</a>
-                                </div>
+                    <div class="flex flex-col bg-slate-100 rounded-2xl overflow-hidden">
+                        <div class="h-[250px]">
+                            @if(str_contains($project->image, 'https://'))
+                                <img src="{{$project->image}}" class="w-full h-full" alt="...">
+                            @else
+                                <img src="/storage/images/{{$project->image}}" class="w-full h-full" alt="...">
+                            @endif
+                        </div>
+                        <div class="p-2">
+                            <div class="flex flex-col ">
+                                <h2 class="">{{$project->name}}</h2>
+                                <p class="">{{$project->description}}</p>
+                                <a class="my-1 p-1" href="{{route('projects.show', $project->id)}}">View project</a>
                             </div>
                         </div>
                     </div>

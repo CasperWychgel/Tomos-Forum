@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+    body {
+        @apply text-base font-light leading-normal m-0;
+    }
+    button {
+        @apply font-light text-base leading-normal tracking-wider m-0;
+    }
+    input {
+        @apply text-base font-normal leading-normal tracking-wider text-inherit m-0 mb-3;
+    }
+    b {
+        @apply font-medium text-inherit m-0;
+    }
+    a {
+        @apply text-base font-light leading-normal tracking-wider text-black no-underline m-0;
+    }
+    li p a {
+        @apply text-base font-medium leading-normal tracking-wider no-underline m-0;
+    }
+    p {
+        @apply text-base font-light leading-normal tracking-wider m-0;
+    }
+    h1 {
+        @apply text-3xl md:text-2xl font-light text-black leading-normal tracking-wider m-0 uppercase;
+    }
+    h2 {
+        @apply text-2xl md:text-xl font-light text-black leading-normal tracking-wider m-0;
+    }
+    h3 {
+        @apply text-xl md:text-lg font-light text-black leading-normal tracking-wider m-0;
+    }
+    h4 {
+        @apply text-lg md:text-base font-light text-black leading-normal tracking-wider m-0;
+    }
+    h5 {
+        @apply text-base md:text-sm font-light text-black leading-normal tracking-wider m-0;
+    }
+}

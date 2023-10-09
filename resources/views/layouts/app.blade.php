@@ -10,15 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div id="app">
-        <x-nav/>
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+<div id="app">
+    <x-nav/>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 </body>
 </html>
